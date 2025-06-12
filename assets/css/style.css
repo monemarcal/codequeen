@@ -343,7 +343,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 .single-horizontal-timeline .experience-time h3{text-transform: capitalize;}
 .single-horizontal-timeline .experience-time h3 span{text-transform:lowercase;}
 .single-horizontal-timeline .timeline-content h5 {margin: 15px 0;}
-.single-horizontal-timeline p {color: #c9001e;max-width: 335px;}
+.single-horizontal-timeline p {color: #E00966;max-width: 335px;}
 
 /*.timeline-horizontal-border*/
 .timeline-horizontal-border {
@@ -358,7 +358,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 }
 span.single-timeline-horizontal {
     display:  inline-block;
-    background: #c9001e;
+    background: #E00966;
     height:  1px;
     width: 380px;
 }
@@ -481,7 +481,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 .timeline-content span>i, .experience-time span>i {
-    color: #c9001e;
+    color: #E00966;
     position: absolute;
     font-size: 10px;
     left: -14.5%;
