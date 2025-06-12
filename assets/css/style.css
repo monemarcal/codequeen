@@ -249,12 +249,13 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 .about-content {padding-top: 50px;}
 /*.single-about-txt*/
 .single-about-txt h3 {
-    font-size:18px;
+    font-size: 15px;
     color: #3c4258;
     text-transform: initial;
     line-height: 1.8;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+	text-align: justify;
 }
 .single-about-txt p {
     font-size: 16px;
