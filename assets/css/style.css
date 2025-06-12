@@ -217,10 +217,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
 .header-text h2 span {color: #E00966;}
 .header-text p {
     color: #fff;
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 300;
     text-transform: uppercase;
-    margin: 15px 0 30px;
+    margin: 15px 0 35px;
     letter-spacing: 1px;
 }
 .header-text a {
