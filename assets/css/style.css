@@ -214,7 +214,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
     text-transform: uppercase;
     line-height: 1.5;
 }
-.header-text h2 span {color: #c9001e;}
+.header-text h2 span {color: #E00966;}
 .header-text p {
     color: #fff;
     font-size: 20px;
@@ -230,8 +230,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
     border-radius: 3px;
     text-transform: capitalize;
     color: #fff;
-    background: #c9001e;
-    border:1px solid #c9001e;
+    background: #E00966;
+    border:1px solid #E00966;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
     -webkit-transition: 0.3s linear; 
     -moz-transition: 0.3s linear; 
