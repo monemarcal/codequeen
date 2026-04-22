@@ -18,14 +18,34 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
-    .lang-toggle-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:2px solid #E00966;color:#E00966;font-size:13px;font-weight:600;font-family:'Poppins',sans-serif;padding:6px 14px;border-radius:20px;cursor:pointer;transition:all 0.3s ease;text-transform:uppercase;letter-spacing:0.5px;margin-top:28px;line-height:1}
-    .lang-toggle-btn:hover{background:#E00966;color:#fff}
-    .timeline-hint{display:flex;align-items:center;justify-content:flex-end;padding:0 24px 12px 24px}
-    .timeline-hint-arrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e0e0e0;border-radius:20px;padding:6px 14px;box-shadow:0 2px 8px rgba(0,0,0,.07);font-size:.82rem;color:#E00966;font-weight:500;font-family:'Inter',sans-serif;animation:hintPulse 2.5s ease-in-out infinite}
-    .arrow-icon{animation:arrowBounce 1.2s ease-in-out infinite;display:inline-block}
-    @keyframes arrowBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
-    @keyframes hintPulse{0%,100%{opacity:1}50%{opacity:.55}}
-    @media screen and (max-width:768px){.timeline-hint{display:none}}
+    .lang-toggle-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent; border: 2px solid #E00966; color: #E00966;
+      font-size: 13px; font-weight: 600; font-family: 'Poppins', sans-serif;
+      padding: 6px 14px; border-radius: 20px; cursor: pointer;
+      transition: all 0.3s ease; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-top: 28px; line-height: 1;
+    }
+    .lang-toggle-btn:hover { background: #E00966; color: #fff; }
+    .timeline-hint {
+      display: flex; align-items: center; justify-content: flex-end;
+      padding: 0 24px 12px 24px;
+    }
+    .timeline-hint-arrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid #e0e0e0; border-radius: 20px;
+      padding: 6px 14px; box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      font-size: .82rem; color: #E00966; font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      animation: hintPulse 2.5s ease-in-out infinite;
+    }
+    .arrow-icon { animation: arrowBounce 1.2s ease-in-out infinite; display: inline-block; }
+    @keyframes arrowBounce { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
+    @keyframes hintPulse { 0%,100%{opacity:1} 50%{opacity:.55} }
+    @media screen and (max-width:768px) { .timeline-hint { display: none; } }
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+    span.lang-block.active { display: inline; }
   </style>
 </head>
 <body>
@@ -34,7 +54,9 @@
       <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"><i class="fa fa-bars"></i></button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+              <i class="fa fa-bars"></i>
+            </button>
             <a class="navbar-brand" href="index.html">MARÇAL</a>
           </div>
           <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
@@ -42,9 +64,7 @@
               <li class="smooth-menu active"></li>
               <li class="smooth-menu"><a href="#timeline">[My Digital Lab]</a></li>
               <li class="smooth-menu">
-                <button class="lang-toggle-btn" onclick="toggleLang()" id="lang-btn">
-                  <span class="lang-flag">EN</span>
-                </button>
+                <button class="lang-toggle-btn" onclick="toggleLang()" id="lang-btn">EN</button>
               </li>
             </ul>
           </div>
@@ -59,11 +79,19 @@
       <div class="row">
         <div class="col-md-12 text-center">
           <div class="header-text">
-            <h2>
-              <span class="t" data-pt="Propósito" data-en="Purpose">Propósito</span> <span class="t-white" data-pt="lidera." data-en="leads.">lidera.</span><br>
-              <span class="t" data-pt="Dados" data-en="Data">Dados</span> <span class="t-white" data-pt="e" data-en="and">e</span> <span class="t" data-pt="análise" data-en="analysis">análise</span> <span class="t-white" data-pt="embasam decisões." data-en="ground decisions.">embasam decisões.</span><br>
-              <span class="t" data-pt="Tecnologia" data-en="Technology">Tecnologia</span> <span class="t-white" data-pt="habilita o como." data-en="enables the how.">habilita o como.</span><br>
-              <span class="t" data-pt="Pessoas" data-en="People">Pessoas</span> <span class="t-white" data-pt="permanecem no centro." data-en="remain at the center.">permanecem no centro.</span>
+            <h2 id="hero-heading">
+              <span class="lang-block lang-pt active">
+                <span style="color:#E00966">Propósito</span> lidera.<br>
+                <span style="color:#E00966">Dados</span> e <span style="color:#E00966">análise</span> embasam decisões.<br>
+                <span style="color:#E00966">Tecnologia</span> habilita o como.<br>
+                <span style="color:#E00966">Pessoas</span> permanecem no centro.
+              </span>
+              <span class="lang-block lang-en">
+                <span style="color:#E00966">Purpose</span> leads.<br>
+                <span style="color:#E00966">Data</span> and <span style="color:#E00966">analysis</span> ground decisions.<br>
+                <span style="color:#E00966">Technology</span> enables the how.<br>
+                <span style="color:#E00966">People</span> remain at the center.
+              </span>
             </h2>
             <p>simone marçal - creative thinker</p>
           </div>
@@ -74,14 +102,29 @@
 
   <section id="about" class="about">
     <div class="section-heading text-center">
-      <h2 class="t" data-pt="QUEM SOU EU?" data-en="WHO AM I?">QUEM SOU EU?</h2>
+      <h2>
+        <span class="lang-block lang-pt active">QUEM SOU EU?</span>
+        <span class="lang-block lang-en">WHO AM I?</span>
+      </h2>
     </div>
     <div class="container">
       <div class="about-content">
         <div class="row"><div class=""><div class="single-about-txt">
           <h3>
-            <span class="lang-pt">Simone Marçal é uma executiva na interseção de produtos digitais, tecnologia, dados e pessoas, liderando soluções que combinam inovação, experiência do usuário e impacto no mundo real. Com trajetória sólida em fintech, pagamentos e ambientes regulados, é reconhecida por impulsionar experiências digitais, integrações complexas e estratégias centradas no usuário.<br><br>Na RecargaPay, lidera o time de Biz Dev Products, avançando a missão da empresa de entregar a melhor experiência de pagamento no Brasil. Seu trabalho conecta APIs, IA aplicada e experiências multicanal inteligentes — via apps, chatbots e agentes autônomos — combinadas com arquitetura regulatória (SCFI, IP, SCD) para escalar soluções acessíveis, conformes e centradas no ser humano.<br><br>Empreendedora serial, Simone co-fundou e atuou como Chief Product Officer na FrontPay e TecleTaxi, ambas com exits bem-sucedidos após rodadas de investimento internacional. Também fundou a Blume Design, onde liderou projetos de transformação digital para organizações como Microsoft, Citibank, Mercedes-Benz, J.Safra, GPA e o Governo do Estado de São Paulo.<br><br>Atualmente é Head de Produto &amp; Desenvolvimento na rede Women Leaders in Fintech e contribui ativamente para thought leadership em criptomoedas, tokenização, blockchain, Web3, APIs e inovação de alto impacto que atende necessidades humanas reais.<br><br>É pós-graduada em Marketing pela ESPM e graduada em Design Digital pela Universidade Anhembi Morumbi (Laureate International Universities). Ex-professora convidada da FGV-SP, é voz frequente em discussões sobre o futuro dos produtos digitais, liderança em tecnologia e uso estratégico de dados para gerar valor.</span>
-            <span class="lang-en" style="display:none">Simone Marçal is an executive at the intersection of digital products, technology, data, and people, leading solutions that blend innovation, user experience, and real-world impact. With a well-established track record in fintech, payments, and regulated environments, she is recognized for driving digital experiences, complex integrations, and user-centered strategies.<br><br>At RecargaPay, she leads the Biz Dev Products team, advancing the company’s mission to deliver the best payment experience in Brazil. Her work bridges APIs, applied AI, and intelligent multichannel experiences—across interfaces such as apps, chatbots, and autonomous agents—combined with regulatory architecture (SCFI, IP, SCD) to scale accessible, compliant, and human-centered solutions.<br><br>A serial entrepreneur, Simone co-founded and served as Chief Product Officer at FrontPay and TecleTaxi, both of which achieved successful exits following international investment rounds. She also founded Blume Design, where she led digital transformation projects for organizations such as Microsoft, Citibank, Mercedes-Benz, J.Safra, GPA, and the Government of the State of São Paulo.<br><br>She currently serves as Head of Product &amp; Development at the Women Leaders in Fintech network and actively contributes to thought leadership on cryptocurrencies, tokenization, blockchain, Web3, APIs, and high-impact innovation that addresses real human needs.<br><br>She holds a postgraduate degree in Marketing from ESPM and a bachelor’s degree in Digital Design from Universidade Anhembi Morumbi (Laureate International Universities). A former guest lecturer at FGV-SP, Simone is a frequent voice in discussions about the future of digital products, tech leadership, and the strategic use of data to create value.</span>
+            <span class="lang-block lang-pt active">
+              Simone Marçal é uma executiva na interseção de produtos digitais, tecnologia, dados e pessoas, liderando soluções que combinam inovação, experiência do usuário e impacto no mundo real. Com trajetória sólida em fintech, pagamentos e ambientes regulados, é reconhecida por impulsionar experiências digitais, integrações complexas e estratégias centradas no usuário.<br><br>
+              Na RecargaPay, lidera o time de Biz Dev Products, avançando a missão da empresa de entregar a melhor experiência de pagamento no Brasil. Seu trabalho conecta APIs, IA aplicada e experiências multicanal inteligentes — via apps, chatbots e agentes autônomos — combinadas com arquitetura regulatória (SCFI, IP, SCD) para escalar soluções acessíveis, conformes e centradas no ser humano.<br><br>
+              Empreendedora serial, Simone co-fundou e atuou como Chief Product Officer na FrontPay e TecleTaxi, ambas com exits bem-sucedidos após rodadas de investimento internacional. Também fundou a Blume Design, onde liderou projetos de transformação digital para organizações como Microsoft, Citibank, Mercedes-Benz, J.Safra, GPA e o Governo do Estado de São Paulo.<br><br>
+              Atualmente é Head de Produto &amp; Desenvolvimento na rede Women Leaders in Fintech e contribui ativamente para thought leadership em criptomoedas, tokenização, blockchain, Web3, APIs e inovação de alto impacto que atende necessidades humanas reais.<br><br>
+              É pós-graduada em Marketing pela ESPM e graduada em Design Digital pela Universidade Anhembi Morumbi (Laureate International Universities). Ex-professora convidada da FGV-SP, é voz frequente em discussões sobre o futuro dos produtos digitais, liderança em tecnologia e uso estratégico de dados para gerar valor.
+            </span>
+            <span class="lang-block lang-en">
+              Simone Marçal is an executive at the intersection of digital products, technology, data, and people, leading solutions that blend innovation, user experience, and real-world impact. With a well-established track record in fintech, payments, and regulated environments, she is recognized for driving digital experiences, complex integrations, and user-centered strategies.<br><br>
+              At RecargaPay, she leads the Biz Dev Products team, advancing the company’s mission to deliver the best payment experience in Brazil. Her work bridges APIs, applied AI, and intelligent multichannel experiences — across interfaces such as apps, chatbots, and autonomous agents — combined with regulatory architecture (SCFI, IP, SCD) to scale accessible, compliant, and human-centered solutions.<br><br>
+              A serial entrepreneur, Simone co-founded and served as Chief Product Officer at FrontPay and TecleTaxi, both of which achieved successful exits following international investment rounds. She also founded Blume Design, where she led digital transformation projects for organizations such as Microsoft, Citibank, Mercedes-Benz, J.Safra, GPA, and the Government of the State of São Paulo.<br><br>
+              She currently serves as Head of Product &amp; Development at the Women Leaders in Fintech network and actively contributes to thought leadership on cryptocurrencies, tokenization, blockchain, Web3, APIs, and high-impact innovation that addresses real human needs.<br><br>
+              She holds a postgraduate degree in Marketing from ESPM and a bachelor’s degree in Digital Design from Universidade Anhembi Morumbi (Laureate International Universities). A former guest lecturer at FGV-SP, Simone is a frequent voice in discussions about the future of digital products, tech leadership, and the strategic use of data to create value.
+            </span>
           </h3>
         </div></div></div>
       </div>
@@ -90,75 +133,92 @@
 
   <section id="timeline" class="timeline-section">
     <div class="section-heading text-center">
-      <h2 class="t" data-pt="Minha Trajetória" data-en="My Path">Minha Trajetória</h2>
+      <h2>
+        <span class="lang-block lang-pt active">Minha Trajetória</span>
+        <span class="lang-block lang-en">My Path</span>
+      </h2>
     </div>
     <div class="timeline-hint">
       <span class="timeline-hint-arrow">
-        <span class="t" data-pt="arraste para ver mais" data-en="drag to see more">arraste para ver mais</span>
+        <span class="lang-block lang-pt active">arraste para ver mais</span><span class="lang-block lang-en">drag to see more</span>
         <span class="arrow-icon">&#8594;</span>
       </span>
     </div>
     <div class="timeline-container">
+
       <div class="timeline-item">
         <h3>2025 — Sr. Product Manager · RecargaPay</h3>
-        <p class="t" data-pt="Liderança de produtos digitais com foco em integrações complexas, estratégias regulatórias e soluções centradas no usuário, especialmente no ecossistema financeiro e de pagamentos." data-en="Leadership of digital products focused on complex integrations, regulatory strategies, and user-centered solutions, especially in the financial and payments ecosystem.">Liderança de produtos digitais com foco em integrações complexas, estratégias regulatórias e soluções centradas no usuário, especialmente no ecossistema financeiro e de pagamentos.</p>
-        <span>Fintech · Estratégia de Produto · Inovação Regulada · Digital Wallet · C-Level Alignment</span>
+        <p><span class="lang-block lang-pt active">Liderança de produtos digitais com foco em integrações complexas, estratégias regulatórias e soluções centradas no usuário, especialmente no ecossistema financeiro e de pagamentos.</span><span class="lang-block lang-en">Leadership of digital products focused on complex integrations, regulatory strategies, and user-centered solutions, especially in the financial and payments ecosystem.</span></p>
+        <span><span class="lang-block lang-pt active">Fintech · Estratégia de Produto · Inovação Regulada · Digital Wallet · C-Level Alignment</span><span class="lang-block lang-en">Fintech · Product Strategy · Regulated Innovation · Digital Wallet · C-Level Alignment</span></span>
       </div>
+
       <div class="timeline-item">
         <h3>2022–2025 — Biz Dev Products Manager · RecargaPay</h3>
-        <p class="t" data-pt="Responsável por orquestrar projetos de alto impacto envolvendo novas fontes de receita, negociação com parceiros, estruturação de jornadas digitais e uso intensivo de dados para suportar decisões de negócio." data-en="Responsible for orchestrating high-impact projects involving new revenue streams, partner negotiations, structuring digital journeys, and intensive use of data to support business decisions.">Responsável por orquestrar projetos de alto impacto envolvendo novas fontes de receita, negociação com parceiros, estruturação de jornadas digitais e uso intensivo de dados para suportar decisões de negócio.</p>
-        <span>Product-Led Growth · APIs · Operações Financeiras · Negociação Estratégica · Go-to-Market</span>
+        <p><span class="lang-block lang-pt active">Responsável por orquestrar projetos de alto impacto envolvendo novas fontes de receita, negociação com parceiros, estruturação de jornadas digitais e uso intensivo de dados para suportar decisões de negócio.</span><span class="lang-block lang-en">Responsible for orchestrating high-impact projects involving new revenue streams, partner negotiations, structuring digital journeys, and intensive use of data to support business decisions.</span></p>
+        <span><span class="lang-block lang-pt active">Product-Led Growth · APIs · Operações Financeiras · Negociação Estratégica · Go-to-Market</span><span class="lang-block lang-en">Product-Led Growth · APIs · Financial Operations · Strategic Negotiation · Go-to-Market</span></span>
       </div>
+
       <div class="timeline-item">
         <h3>2019–2022 — Product Owner · RecargaPay</h3>
-        <p class="t" data-pt="Atuação full-cycle na liderança de verticais de produtos como seguros, gás e transporte, conectando visão estratégica ao delivery técnico em ambientes de inovação contínua." data-en="Full-cycle role leading product verticals such as insurance, gas, and transport, connecting strategic vision to technical delivery in continuous innovation environments.">Atuação full-cycle na liderança de verticais de produtos como seguros, gás e transporte, conectando visão estratégica ao delivery técnico em ambientes de inovação contínua.</p>
-        <span>Growth Hacking · Multivertical App · Digital Expansion · Design Thinking · Ciclo de Vida do Produto</span>
+        <p><span class="lang-block lang-pt active">Atuação full-cycle na liderança de verticais de produtos como seguros, gás e transporte, conectando visão estratégica ao delivery técnico em ambientes de inovação contínua.</span><span class="lang-block lang-en">Full-cycle role leading product verticals such as insurance, gas, and transport, connecting strategic vision to technical delivery in continuous innovation environments.</span></p>
+        <span><span class="lang-block lang-pt active">Growth Hacking · Multivertical App · Digital Expansion · Design Thinking · Ciclo de Vida do Produto</span><span class="lang-block lang-en">Growth Hacking · Multivertical App · Digital Expansion · Design Thinking · Product Lifecycle</span></span>
       </div>
+
       <div class="timeline-item">
-        <h3>2024–Presente — Coordenadora GT Produto · Women Leaders in Fintechs</h3>
-        <p class="t" data-pt="Atuação voluntária promovendo liderança feminina no setor de fintechs por meio de conteúdo, eventos e redes de apoio." data-en="Volunteer work promoting female leadership in the fintech sector through content, events, and support networks.">Atuação voluntária promovendo liderança feminina no setor de fintechs por meio de conteúdo, eventos e redes de apoio.</p>
-        <span>Liderança Feminina · Comunidade · Mentoria Estratégica · Diversidade Executiva</span>
+        <h3><span class="lang-block lang-pt active">2024–Presente — Coordenadora GT Produto · Women Leaders in Fintechs</span><span class="lang-block lang-en">2024–Present — Product WG Coordinator · Women Leaders in Fintechs</span></h3>
+        <p><span class="lang-block lang-pt active">Atuação voluntária promovendo liderança feminina no setor de fintechs por meio de conteúdo, eventos e redes de apoio.</span><span class="lang-block lang-en">Volunteer work promoting female leadership in the fintech sector through content, events, and support networks.</span></p>
+        <span><span class="lang-block lang-pt active">Liderança Feminina · Comunidade · Mentoria Estratégica · Diversidade Executiva</span><span class="lang-block lang-en">Female Leadership · Community · Strategic Mentorship · Executive Diversity</span></span>
       </div>
+
       <div class="timeline-item">
         <h3>2006–2018 — Founder &amp; CEO · Blume Design</h3>
-        <p class="t" data-pt="Fundadora de consultoria em inovação, atuando no desenho de soluções digitais e branding para grandes marcas. Projetos com GPA, Citibank, Safra e Prefeitura de São Paulo." data-en="Founder of an innovation consultancy, working on digital solutions and branding for major brands. Projects with GPA, Citibank, Safra, and the City of São Paulo.">Fundadora de consultoria em inovação, atuando no desenho de soluções digitais e branding para grandes marcas. Projetos com GPA, Citibank, Safra e Prefeitura de São Paulo.</p>
-        <span>Consultoria Estratégica · UX/UI · Digital Business · Design Thinking · Portfólio de Impacto</span>
+        <p><span class="lang-block lang-pt active">Fundadora de consultoria em inovação, atuando no desenho de soluções digitais e branding para grandes marcas. Projetos com GPA, Citibank, Safra e Prefeitura de São Paulo.</span><span class="lang-block lang-en">Founder of an innovation consultancy, working on digital solutions and branding for major brands. Projects with GPA, Citibank, Safra, and the City of São Paulo.</span></p>
+        <span><span class="lang-block lang-pt active">Consultoria Estratégica · UX/UI · Digital Business · Design Thinking · Portfólio de Impacto</span><span class="lang-block lang-en">Strategic Consulting · UX/UI · Digital Business · Design Thinking · Impact Portfolio</span></span>
       </div>
+
       <div class="timeline-item">
         <h3>2016–2018 — COO · TecleTaxi (Grupo Human Bios)</h3>
-        <p class="t" data-pt="Responsável pela estruturação do plano de negócios, captação de R$ 4 milhões, lançamento de produto digital para mobilidade corporativa e liderança de operação full-stack." data-en="Responsible for structuring the business plan, raising R$ 4 million, launching a digital product for corporate mobility, and leading full-stack operations.">Responsável pela estruturação do plano de negócios, captação de R$ 4 milhões, lançamento de produto digital para mobilidade corporativa e liderança de operação full-stack.</p>
-        <span>Mobility Tech · Captação de Recursos · MVP · Go-to-Market Lean · Branding Estratégico</span>
+        <p><span class="lang-block lang-pt active">Responsável pela estruturação do plano de negócios, captação de R$ 4 milhões, lançamento de produto digital para mobilidade corporativa e liderança de operação full-stack.</span><span class="lang-block lang-en">Responsible for structuring the business plan, raising R$ 4 million, launching a digital product for corporate mobility, and leading full-stack operations.</span></p>
+        <span><span class="lang-block lang-pt active">Mobility Tech · Captação de Recursos · MVP · Go-to-Market Lean · Branding Estratégico</span><span class="lang-block lang-en">Mobility Tech · Fundraising · MVP · Go-to-Market Lean · Strategic Branding</span></span>
       </div>
+
       <div class="timeline-item">
         <h3>2012–2016 — Co-founder &amp; CPO · FrontPay</h3>
-        <p class="t" data-pt="Liderou a concepção de um app de pagamentos digitais para empresas e unbanked. Conduziu modelagem, parcerias jurídicas e estruturação de MVP funcional." data-en="Led the conception of a digital payments app for businesses and the unbanked. Conducted modeling, legal partnerships, and functional MVP structuring.">Liderou a concepção de um app de pagamentos digitais para empresas e unbanked. Conduziu modelagem, parcerias jurídicas e estruturação de MVP funcional.</p>
+        <p><span class="lang-block lang-pt active">Liderou a concepção de um app de pagamentos digitais para empresas e unbanked. Conduziu modelagem, parcerias jurídicas e estruturação de MVP funcional.</span><span class="lang-block lang-en">Led the conception of a digital payments app for businesses and the unbanked. Conducted modeling, legal partnerships, and functional MVP structuring.</span></p>
         <span>Fintech Early Stage · B2B Payments · Product Design · Mobile Banking · MVP Thinking</span>
       </div>
+
       <div class="timeline-item">
-        <h3>2006–2012 — Projetos Digitais · BRQ, Kiman, Emphasys, Programmers</h3>
-        <p class="t" data-pt="Atuação como designer digital, líder de produto e coordenadora de hubs em projetos com Mercedes-Benz, Citibank, Caixa, Santander, BB, FGV e Governo." data-en="Worked as digital designer, product lead, and hub coordinator on projects with Mercedes-Benz, Citibank, Caixa, Santander, BB, FGV, and Government.">Atuação como designer digital, líder de produto e coordenadora de hubs em projetos com Mercedes-Benz, Citibank, Caixa, Santander, BB, FGV e Governo.</p>
-        <span>UX Estratégico · Portais Corporativos · Banca e Varejo · Gestão de Ciclo de Vida</span>
+        <h3><span class="lang-block lang-pt active">2006–2012 — Projetos Digitais · BRQ, Kiman, Emphasys, Programmers</span><span class="lang-block lang-en">2006–2012 — Digital Projects · BRQ, Kiman, Emphasys, Programmers</span></h3>
+        <p><span class="lang-block lang-pt active">Atuação como designer digital, líder de produto e coordenadora de hubs em projetos com Mercedes-Benz, Citibank, Caixa, Santander, BB, FGV e Governo.</span><span class="lang-block lang-en">Worked as digital designer, product lead, and hub coordinator on projects with Mercedes-Benz, Citibank, Caixa, Santander, BB, FGV, and Government.</span></p>
+        <span><span class="lang-block lang-pt active">UX Estratégico · Portais Corporativos · Banca e Varejo · Gestão de Ciclo de Vida</span><span class="lang-block lang-en">Strategic UX · Corporate Portals · Banking &amp; Retail · Lifecycle Management</span></span>
       </div>
+
       <div class="timeline-item">
-        <h3>2003–2005 — Gerente de Produtos Digitais · FGV</h3>
-        <p class="t" data-pt="Criadora do GVConsult, conduziu transformação digital de grandes clientes como EDP, SAP, FIESP e SEBRAE, antes mesmo da consolidação do Scrum no Brasil." data-en="Creator of GVConsult, led digital transformation for major clients such as EDP, SAP, FIESP, and SEBRAE, even before Scrum was established in Brazil.">Criadora do GVConsult, conduziu transformação digital de grandes clientes como EDP, SAP, FIESP e SEBRAE, antes mesmo da consolidação do Scrum no Brasil.</p>
-        <span>GovTech · Educação · Knowledge Design · Consultoria Executiva</span>
+        <h3><span class="lang-block lang-pt active">2003–2005 — Gerente de Produtos Digitais · FGV</span><span class="lang-block lang-en">2003–2005 — Digital Products Manager · FGV</span></h3>
+        <p><span class="lang-block lang-pt active">Criadora do GVConsult, conduziu transformação digital de grandes clientes como EDP, SAP, FIESP e SEBRAE, antes mesmo da consolidação do Scrum no Brasil.</span><span class="lang-block lang-en">Creator of GVConsult, led digital transformation for major clients such as EDP, SAP, FIESP, and SEBRAE, even before Scrum was established in Brazil.</span></p>
+        <span><span class="lang-block lang-pt active">GovTech · Educação · Knowledge Design · Consultoria Executiva</span><span class="lang-block lang-en">GovTech · Education · Knowledge Design · Executive Consulting</span></span>
       </div>
+
       <div class="timeline-item">
-        <h3>2000–2003 — Coordenação de Marketing e Professora Convidada · FGV</h3>
-        <p class="t" data-pt="Implementou portais pioneiros no Brasil e ministrou uma das primeiras disciplinas de Internet Business no país." data-en="Implemented pioneering portals in Brazil and taught one of the country’s first Internet Business courses.">Implementou portais pioneiros no Brasil e ministrou uma das primeiras disciplinas de Internet Business no país.</p>
-        <span>Internet como Ambiente de Negócios · Inovação Acadêmica</span>
+        <h3><span class="lang-block lang-pt active">2000–2003 — Coordenação de Marketing e Professora Convidada · FGV</span><span class="lang-block lang-en">2000–2003 — Marketing Coordination and Guest Lecturer · FGV</span></h3>
+        <p><span class="lang-block lang-pt active">Implementou portais pioneiros no Brasil e ministrou uma das primeiras disciplinas de Internet Business no país.</span><span class="lang-block lang-en">Implemented pioneering portals in Brazil and taught one of the country’s first Internet Business courses.</span></p>
+        <span><span class="lang-block lang-pt active">Internet como Ambiente de Negócios · Inovação Acadêmica</span><span class="lang-block lang-en">Internet as Business Environment · Academic Innovation</span></span>
       </div>
+
       <div class="timeline-item">
-        <h3>1999–2000 — Relações Públicas · Unicomm Digital</h3>
-        <p class="t" data-pt="Atuação em projetos de comunicação e eventos estratégicos voltados à liderança empresarial e inovação digital emergente." data-en="Worked on communication projects and strategic events focused on business leadership and emerging digital innovation.">Atuação em projetos de comunicação e eventos estratégicos voltados à liderança empresarial e inovação digital emergente.</p>
-        <span>Eventos C-Level · Estratégia de Comunicação · Jovem Aprendiz</span>
+        <h3><span class="lang-block lang-pt active">1999–2000 — Relações Públicas · Unicomm Digital</span><span class="lang-block lang-en">1999–2000 — Public Relations · Unicomm Digital</span></h3>
+        <p><span class="lang-block lang-pt active">Atuação em projetos de comunicação e eventos estratégicos voltados à liderança empresarial e inovação digital emergente.</span><span class="lang-block lang-en">Worked on communication projects and strategic events focused on business leadership and emerging digital innovation.</span></p>
+        <span><span class="lang-block lang-pt active">Eventos C-Level · Estratégia de Comunicação · Jovem Aprendiz</span><span class="lang-block lang-en">C-Level Events · Communication Strategy · Young Talent</span></span>
       </div>
+
     </div>
   </section>
 
   <footer id="footer-copyright" class="footer-copyright">
-    <div class="container"><div class="hm-footer-copyright text-center"><p>&copy; copyright Simone Marçal by Blume Design</p></div></div>
+    <div class="container"><div class="hm-footer-copyright text-center">
+      <p>&copy; copyright Simone Marçal by Blume Design</p>
+    </div></div>
     <div id="scroll-Top"><div class="return-to-top"><i class="fa fa-angle-up" id="scroll-top"></i></div></div>
   </footer>
 
@@ -173,16 +233,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="assets/js/custom.js"></script>
   <script>
-    var currentLang='pt';
-    function toggleLang(){currentLang=currentLang==='pt'?'en':'pt';applyLang(currentLang);}
-    function applyLang(lang){
-      document.querySelectorAll('.t[data-pt][data-en]').forEach(function(el){el.textContent=el.getAttribute('data-'+lang);});
-      document.querySelectorAll('.lang-pt,.lang-en').forEach(function(el){el.style.display='none';});
-      document.querySelectorAll('.lang-'+lang).forEach(function(el){el.style.display='inline';});
-      var btn=document.getElementById('lang-btn');
-      if(lang==='pt'){btn.innerHTML='<span class="lang-flag">EN</span>';document.documentElement.lang='pt';}
-      else{btn.innerHTML='<span class="lang-flag">PT</span>';document.documentElement.lang='en';}
+    var currentLang = 'pt';
+
+    function toggleLang() {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      applyLang(currentLang);
     }
+
+    function applyLang(lang) {
+      var other = lang === 'pt' ? 'en' : 'pt';
+      document.querySelectorAll('.lang-' + lang).forEach(function(el) {
+        el.classList.add('active');
+      });
+      document.querySelectorAll('.lang-' + other).forEach(function(el) {
+        el.classList.remove('active');
+      });
+      document.getElementById('lang-btn').textContent = lang === 'pt' ? 'EN' : 'PT';
+      document.documentElement.lang = lang;
+    }
+
+    // Ensure PT is active on load
+    applyLang('pt');
   </script>
 </body>
 </html>
